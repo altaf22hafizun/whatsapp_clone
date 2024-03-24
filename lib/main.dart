@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/page/home.dart';
-import 'package:whatsapp_clone/page/chat.dart';
-import 'package:whatsapp_clone/page/setting.dart';
+import 'package:list_makanan/list_makanan.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,17 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(color: Color(0xFF075E55)),
-        bottomSheetTheme: BottomSheetThemeData(
-          backgroundColor: Colors.black.withOpacity(0),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown.shade600),
+        useMaterial3: true,
       ),
-      routes: {
-        "/": (context) => HomePage(),
-        "settingsPage": (context) => SettingPage(),
-         "chatPage": (context) => ChatPage(),
-      },
+      home: const FoodList(),
     );
   }
 }
